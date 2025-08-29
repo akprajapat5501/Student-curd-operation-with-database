@@ -11,17 +11,17 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors())
 
-const PORT = 8000 || 9000;
+const PORT = process.env.PORT || 8000;
 const URL = process.env.MONGOURL;
-// const HOSTNAME = "127.0.0.1";
+const HOSTNAME = process.env.HOSTNAME || "0.0.0.0";
 
 
 mongoose.connect(URL).then(()=>{
     console.log("Database Connected");
 
-    app.listen(PORT, HOSTNAME, ()=>{
-        console.log(`server is running on port http://${HOSTNAME}:${PORT}`);
-    })
+    app.listen(PORT, HOSTNAME, () => {
+  console.log(`✅ Server running on port http://${HOSTNAME}:${PORT}`);
+});
 
 }).catch(error => console.log(error));
 
