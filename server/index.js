@@ -11,9 +11,9 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors())
 
-const PORT = 8000;
+const PORT = 8000 || 9000;
 const URL = process.env.MONGOURL;
-const HOSTNAME = "127.0.0.1";
+// const HOSTNAME = "127.0.0.1";
 
 
 mongoose.connect(URL).then(()=>{
