@@ -23,7 +23,7 @@ const Edit = () => {
     }
 
     useEffect(()=>{
-        axios.get(`http://127.0.0.1:8000/api/getOne/${id}`)
+        axios.get(`https://student-curd-operation-with-database.onrender.com/api/getOne/${id}`)
         .then((response)=>{
             setUser(response.data);
         }).catch((error) => {console.log(error);})
@@ -31,7 +31,7 @@ const Edit = () => {
 
     const sumitForm = async(e) =>{
         e.preventDefault()
-        await axios.put(`http://127.0.0.1:8000/api/update/${id}`, user)
+        await axios.put(`https://student-curd-operation-with-database.onrender.com/api/update/${id}`, user)
         .then((response)=>{
             toast.success(response.data.msg, {position: "top-right"})
             navigate("/")
