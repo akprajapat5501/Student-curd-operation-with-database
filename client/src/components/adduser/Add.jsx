@@ -24,7 +24,7 @@ const Add = () => {
 
     const submitForm = async(e) =>{
         e.preventDefault()
-        await axios.post("http://127.0.0.1:8000/api", user)
+        await axios.post("https://student-curd-operation-with-database.onrender.com/api", user)
         .then((response)=>{
             toast.success(response.data.msg, {position: "top-right"})
             navigate("/")
